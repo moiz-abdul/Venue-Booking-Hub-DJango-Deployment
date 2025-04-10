@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    /* header */
+    
+    .header{
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 1000;
+        background: var(--white);
+        box-shadow: var(--box-shadow);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 3%;
+    }
+    
+    .header .navbar a{
+        font-size: 1.7rem;
+        color: var(--black);
+        margin: 0 1rem;
+    }
+    
+    .header .navbar a:hover{
+        color: var(--primary);
+    }
+    
+    .header .navbar .btn{
+        margin-top: 0;
+        color: var(--white);
+    }
+    
+    .header .navbar .btn:hover{
+        color: var(--white);
+    }
+    
+    body
+    {
+      background-color: #C1EAF7;
+    }
+
+    .event-form {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #3D93AE;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border: 1px solid #CFCFCF;
+      border-radius: 6px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+    /* Navbar styling */
+
+.btn-logout {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: #0056b3;
+}
+/* Navbar styling */
+  </style>
+</head>
+
+<body>
+
+
+<br>
+  <h1 style="text-align: center; color: #316E8C;">Add Information</h1>
+<br>
+  <form class="event-form" method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="Fname"  placeholder="First Name" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="Lname"  placeholder="Last Name" required>
+
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" id="phoneNumber" name="PhoneNo"  placeholder="Phone Number" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="Email"  placeholder="Email Address" required>
+
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate" name="Eventdate"  placeholder="Event Date" required>
+
+    <label for="eventTime">Event Time:</label>
+    <input type="time" id="eventTime" name="Eventtime"  placeholder="Event Time" required>
+
+    <label for="numOfGuests">Number of Guests:</label>
+    <input type="number" id="numOfGuests" name="No-of-guests" placeholder="No of Guests" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" rows="4" name="Message"  placeholder="Any Message"></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+<br><br>
+</body>
+
+</html>

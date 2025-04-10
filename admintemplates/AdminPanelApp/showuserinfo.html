@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* /* Add CSS styles for hotel cards here */
+        .card {
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px;
+          width: 95%;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      }
+      .card img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+      }
+      .hidden {
+          display: none;
+      }
+    </style>
+</head>
+<body>
+ 
+    <br>
+        <h1 style="text-align: center;">User Information</h1>
+        <br>
+        <!-- User Card Gallery -->
+    <div class="card-container">
+      {% for userdata in userinfo %}
+      <div class="card">
+          <div class="card-body">
+              <h5 class="card-title">{{userdata.First_name}} {{userdata.Last_name}}</h5>
+              <p class="card-text">Phone Number: {{userdata.Phone_number}}</p>
+              <p class="card-text">Email: {{userdata.Email_address}}</p>
+              <p class="card-text">Event Date: {{userdata.Event_date}}</p>
+              <p class="card-text">Event Time: {{userdata.Event_time}}</p>
+              <p class="card-text">No. of Guests: {{userdata.No_of_Guests}}</p>
+              <p class="card-text">Message: {{userdata.Message}}</p>
+              <!--
+              <div class="btn-group">
+                  <button class="btn btn-warning">
+                      <a href="{% url 'edituserinfo' userdata.id %}">Edit</a>
+                  </button>
+                  <button class="btn btn-danger">
+                      <a href="{% url 'deleteuserinfo' userdata.id %}">Delete</a>
+                  </button>
+                -->
+              </div>
+          </div>
+      </div>
+        {% empty %}
+        <p> No UserData Found </p>
+        {% endfor %}
+
+          
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+  
+</body>
+</html>
+
